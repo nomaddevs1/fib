@@ -2,7 +2,6 @@ language: generic
 sudo: required
 services: 
   - docker
-
 before_install:
   - docker build -t nomad20/react_fib -f ./client/Dockerfile.dev  ./client
 script:
