@@ -16,7 +16,6 @@ after_success:
 #LOG IN TO THE DOCKER CLI
   #!/bin/bash
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
 #TAKE THOSE IMAGES AND PUSH THEM TO DOCKER HUB
   - docker push nomad20/multi-client
   - docker push nomad20/multi-nginx
