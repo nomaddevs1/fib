@@ -8,9 +8,9 @@ script:
   - docker run -e CI=true nomad20/react_fib npm test
 after_success:
   - docker build -t nomad20/multi-client ./client
-  - docker build - t nomad20/multi-nginx ./nginx
-  - docker build - t nomad20/multi-server ./server
-  - docker build - t nomad20/multi-worker ./worker
+  - docker build -t nomad20/multi-nginx ./nginx
+  - docker build -t nomad20/multi-server ./server
+  - docker build -t nomad20/multi-worker ./worker
   - >-
     echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME"
     --password-stdin
