@@ -5,7 +5,7 @@ services:
 before_install:
   - docker build -t nomad20/react_fib -f ./client/Dockerfile.dev  ./client
 script:
-  - docker run CI=true nomad20/react_fib npm test
+  - docker run -e CI=true nomad20/react_fib npm test
 after_success:
   - docker build -t nomad20/multi-client ./client
   - docker build - t nomad20/multi-nginx ./nginx
