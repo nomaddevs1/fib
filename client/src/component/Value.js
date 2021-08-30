@@ -54,7 +54,9 @@ const ValueForm = ({ pristine, submitting, handleSubmit }) => {
   };
 
   const onSubmit = ({ index }) => {
-    console.log(submitting);
+    if (values[index]) {
+      return;
+    }
     dispatch(fetchValue(index));
 
     history.push("/");

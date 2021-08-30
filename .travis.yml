@@ -18,3 +18,13 @@ after_success:
   - docker push nomad20/multi-nginx
   - docker push nomad20/multi-server
   - docker push nomad20/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "multi-docker"
+  env: "Multidocker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-535188713912"
+  bucket_path: "docker-multi"
+  access_key: $AWS_ACCESS_KEY
+  secret_acess_key: $AWS_SECRET_KEY
